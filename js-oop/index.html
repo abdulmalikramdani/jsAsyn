@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oop javascript</title>
+</head>
+<body>
+    <h1>OOP javascript</h1>
+    <script>
+        const convertColor = (r,g,b) => {
+            const color = {}
+            color.r = r
+            color.g = g
+            color.b = b
+           color.rgb = function() {
+            const {r,g,b} = this
+            return `rgb(${r},${g},${b})`
+           }
+           color.hex = function(){
+            const {r,g,b} = this
+            return `#${r.toString(16).padStart(2, '0')}${g.toString (16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`
+
+           }
+            return color
+        }
+        // promise
+        const changeColor = (color,delay) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    document.body.style.backgroundColor = color
+                    resolve(color)
+            })
+            },delay)
+        }
+
+        changeColor('yellow',1000)
+        
+
+        
+        
+    </script>
+</body>
+</html>

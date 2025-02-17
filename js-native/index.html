@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript </title>
+</head>
+<body>
+    <h1>hello</h1>
+
+    <script>
+        let data = [
+            {name: 'John', age: 25},
+            {name: 'Jane', age: 30},
+            {name: 'Bob', age: 35},
+            {name: 'Alice', age: 20}
+
+        ]
+       let result = data
+                        .filter(element => element.age < 32)
+                        .forEach(element => {
+                            console.log(element.name + ' is ' + element.age + ' years old')
+                        });
+        const timeout = setTimeout(() => {
+            console.log('muncul 3 detik')
+
+        }, 3000);
+        console.log("selesai")
+        interval = setInterval(() => {
+            console.log('muncul setiap 1 detik')
+        }, 1000);
+
+      data.map(element => {
+          console.log(element.name)
+      })
+      //every = harus semua true
+      exam = [90, 80, 70, 60]
+      every = exam.every(x => x > 50)
+      if(every == false){
+          console.log('gagal')
+
+      }else{
+        console.log('sukses')
+      }
+
+      //some = salah satu true
+      some = exam.some(x => x > 50)
+      if(some == false){
+        console.log('gagal')
+      }
+      else{
+        console.log('ada beberapa yang mendapatkan nilai atas 50')
+      }
+
+      //find
+      userinput= prompt('masukkan nama kamu')
+      user = data.find(element => element.name.toLocaleLowerCase() == userinput)
+       if(user == undefined){
+        console.log('nama kamu tidak ada di data')
+       }else{
+        console.log(`nama kamu ${user.name} umur kamu ${user.age}`)
+       }
+
+       //reduce
+       const reduceData = data.reduce((reduceData,age) => {
+           console.log(reduceData,age)
+           if   (reduceData < age.age){
+               return age.age
+           }
+           return reduceData
+       })
+       console.log(reduceData)
+
+       let person = {
+           name: 'John',
+           age: 30,
+           fullName : function(){
+           console.log(this.name + ' ' + this.age)
+           },
+           sayHello : function(){
+            console.log('hello')
+           },
+           delayHello : function(){
+            setTimeout(() => {
+                console.log(`hello ${fullName}`)
+            }, 1000);
+           }
+       }
+
+    
+       function sayHello(nama = "jhon"){
+        console.log(`selamat pagi ${nama}`)
+       }
+      
+
+
+
+
+    </script>
+</body>
+</html>
